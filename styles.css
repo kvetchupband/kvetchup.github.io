@@ -161,6 +161,17 @@ iframe {
   margin-top: 5px;
 }
 
+
+.site-header .container {
+  padding-inline: 1.5rem;
+}
+
+@media (max-width: 720px) {
+  .site-header .container {
+    padding-inline: 1.25rem;  /* still roomy but comfy on tiny screens */
+  }
+}
+
 /* MOBILE NAV: hamburger + dropdown */
 /* MOBILE NAV: hamburger + dropdown */
 @media (max-width: 720px) {
