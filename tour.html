@@ -19,6 +19,13 @@
                 KvetchUP
             </a>
 
+            <!-- NEW: hotdog / hamburger button -->
+            <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <nav class="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -107,10 +114,29 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            /* === MOBILE NAV TOGGLER === */
+            const navToggle = document.querySelector(".nav-toggle");
+            const mainNav = document.querySelector(".main-nav");
+
+            if (navToggle && mainNav) {
+                navToggle.addEventListener("click", () => {
+                    const isOpen = document.body.classList.toggle("nav-open");
+                    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+                });
+
+                // Close menu when a link is clicked
+                mainNav.addEventListener("click", (event) => {
+                    if (event.target.tagName === "A") {
+                        document.body.classList.remove("nav-open");
+                        navToggle.setAttribute("aria-expanded", "false");
+                    }
+                });
+            }
+
+            /* === SCROLL REVEAL (your existing code) === */
             const reveals = document.querySelectorAll(".reveal");
             if (!reveals.length) return;
 
-            // Use IntersectionObserver for reliable scroll detection
             if ("IntersectionObserver" in window) {
                 const observer = new IntersectionObserver(
                     (entries, obs) => {
@@ -126,12 +152,10 @@
 
                 reveals.forEach(el => observer.observe(el));
             } else {
-                // Fallback: just show everything
                 reveals.forEach(el => el.classList.add("visible"));
             }
         });
     </script>
-
 
 </body>
 
