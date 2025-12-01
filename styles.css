@@ -10,7 +10,7 @@
 /* Global styles */
 :root {
   --light-text: #F9FAFB;
-  --nav-background:#020617c3; 
+  --nav-background: #020617c3;
   --header-text: #F9FAFB;
   --background: #0F172A;
   --nav-text-hover: #b8b4a3;
@@ -44,7 +44,8 @@ body {
 }
 
 main {
-  padding-top: 90px;   /* enough space for the fixed header on desktop */
+  padding-top: 90px;
+  /* enough space for the fixed header on desktop */
   flex: 1 0 auto;
 }
 
@@ -53,7 +54,8 @@ main {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding-inline: 1rem;  /* side padding so content doesn't hug edges on phones */
+  padding-inline: 1rem;
+  /* side padding so content doesn't hug edges on phones */
 }
 
 img,
@@ -137,12 +139,16 @@ iframe {
 }
 
 /* HAMBURGER BASE (hidden on desktop by default) */
+/* HAMBURGER BASE (hidden on desktop by default) */
 .nav-toggle {
   display: none;
   background: transparent;
   border: none;
-  padding: 0.25rem;
+  padding: 0.4rem;
+  /* was 0.25rem – a bit more click area */
   margin-left: auto;
+  margin-right: 0.4rem;
+  /* NEW: pull it slightly away from the right edge */
   cursor: pointer;
 }
 
@@ -152,14 +158,17 @@ iframe {
   height: 2px;
   border-radius: 999px;
   background: var(--light-text);
+  transform-origin: center;
+  /* NEW: rotations stay centered */
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
 }
 
-.nav-toggle span + span {
+.nav-toggle span+span {
   margin-top: 5px;
 }
+
 
 
 .site-header .container {
@@ -168,13 +177,15 @@ iframe {
 
 @media (max-width: 720px) {
   .site-header .container {
-    padding-inline: 1.25rem;  /* still roomy but comfy on tiny screens */
+    padding-inline: 1.25rem;
+    /* still roomy but comfy on tiny screens */
   }
 }
 
 /* MOBILE NAV: hamburger + dropdown */
 /* MOBILE NAV: hamburger + dropdown */
 @media (max-width: 720px) {
+
   /* extra top padding because header is taller on mobile */
   main {
     padding-top: 120px;
@@ -192,7 +203,8 @@ iframe {
   .logo {
     font-size: 1.4rem;
     letter-spacing: 0.12em;
-    white-space: nowrap;      /* prevent wrapping */
+    white-space: nowrap;
+    /* prevent wrapping */
   }
 
   /* show the hotdog, turn nav into dropdown */
@@ -205,12 +217,14 @@ iframe {
 
   .main-nav {
     position: absolute;
-    top: 100%;             /* directly under the header bar */
+    top: 100%;
+    /* directly under the header bar */
     left: 0;
     right: 0;
     background: var(--nav-background);
     border-bottom: 1px solid rgba(148, 163, 184, 0.3);
-    display: none;         /* hidden by default */
+    display: none;
+    /* hidden by default */
     flex-direction: column;
     align-items: flex-start;
     padding: 0.75rem 1rem 1rem;
@@ -228,7 +242,7 @@ iframe {
 
   /* Animate icon into an "X" when open */
   body.nav-open .nav-toggle span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(5px) rotate(45deg);
   }
 
   body.nav-open .nav-toggle span:nth-child(2) {
@@ -236,7 +250,7 @@ iframe {
   }
 
   body.nav-open .nav-toggle span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-5px) rotate(-45deg);
   }
 }
 
@@ -245,14 +259,17 @@ iframe {
 /* Hero section */
 
 .hero-image-section {
-  background-color: var(--background);   /* or whatever you like */
+  background-color: var(--background);
+  /* or whatever you like */
   padding: 1.5rem 0 2rem;
 }
 
 .hero-image {
   display: block;
-  width: 100%;                /* fill the container */
-  max-width: none;            /* don't cap it here */
+  width: 100%;
+  /* fill the container */
+  max-width: none;
+  /* don't cap it here */
   border-radius: 1rem;
   box-shadow: 0 22px 55px rgba(15, 23, 42, 0.5);
 
@@ -327,14 +344,17 @@ iframe {
 .section p {
   color: var(--light-text);
   margin-bottom: 0.75rem;
-  font-size: 1.1rem;       /* was 1.6rem – much more readable */
+  font-size: 1.1rem;
+  /* was 1.6rem – much more readable */
   text-align: justify;
 }
 
 .cta-section {
   padding: 4rem 0 2rem 0;
-  background-color: var(--background);   /* or any color you like */
-  text-align: center;          /* centers inline elements like the button */
+  background-color: var(--background);
+  /* or any color you like */
+  text-align: center;
+  /* centers inline elements like the button */
 }
 
 
@@ -397,7 +417,8 @@ iframe {
 .media-grid {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);  /* one column */
+  grid-template-columns: minmax(0, 1fr);
+  /* one column */
   gap: 2rem;
 }
 
@@ -410,16 +431,18 @@ iframe {
 /* On wider screens: 2 videos per row */
 @media (max-width: 900px) {
   .section-grid {
-    grid-template-columns: 1fr;  /* single column on tablets/phones */
+    grid-template-columns: 1fr;
+    /* single column on tablets/phones */
     gap: 2rem;
   }
 
-  .section-grid > div:last-child {
-    order: -1; /* image/form above text on small screens */
+  .section-grid>div:last-child {
+    order: -1;
+    /* image/form above text on small screens */
   }
 }
 
-.media-grid h2{
+.media-grid h2 {
   margin-bottom: 0.5rem;
   font-size: 3rem;
   color: var(--header-text);
@@ -429,7 +452,8 @@ iframe {
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
   overflow: hidden;
   border-radius: 0.75rem;
 }
@@ -444,8 +468,10 @@ iframe {
 }
 
 .media-card {
-  background: #020617;                 /* dark panel that matches the nav */
-  color: var(--light-text);            /* light text on dark */
+  background: #020617;
+  /* dark panel that matches the nav */
+  color: var(--light-text);
+  /* light text on dark */
   border-radius: 1.25rem;
   padding: 1rem 1rem 1.25rem;
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.6);
@@ -460,7 +486,8 @@ iframe {
 /* wrapper around the video */
 .media-placeholder {
   border-radius: 0.9rem;
-  border: none;              /* no light border */
+  border: none;
+  /* no light border */
   padding: 0;
   overflow: hidden;
 }
@@ -540,7 +567,7 @@ iframe {
 
 /* Contact section */
 .contact-email a {
-  color:var(--light-text);
+  color: var(--light-text);
   text-decoration: none;
 }
 
@@ -580,7 +607,8 @@ iframe {
 .social-icon svg {
   width: 100%;
   height: 100%;
-  fill: currentColor;                /* matches the link color */
+  fill: currentColor;
+  /* matches the link color */
   transition: transform 0.15s ease;
 }
 
@@ -628,7 +656,8 @@ iframe {
   margin-bottom: 0.3rem;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--light-text);  /* was default dark – hard to read on blue */
+  color: var(--light-text);
+  /* was default dark – hard to read on blue */
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -689,7 +718,8 @@ iframe {
   background: var(--nav-background);
   color: var(--light-text);
   padding: 1.75rem 0;
-  flex-shrink: 0;     /* NEW */
+  flex-shrink: 0;
+  /* NEW */
 
 }
 
@@ -750,8 +780,9 @@ iframe {
     grid-template-columns: 1fr;
   }
 
-  .section-grid > div:last-child {
-    order: -1; /* put images/forms above text on small screens if you like */
+  .section-grid>div:last-child {
+    order: -1;
+    /* put images/forms above text on small screens if you like */
   }
 }
 
@@ -767,7 +798,7 @@ iframe {
 }
 
 /* Members section */
-.members-section{
+.members-section {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -786,8 +817,10 @@ iframe {
 .members-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;        /* spacing between cards */
-  margin-top: 2rem;   /* spacing above the first row */
+  gap: 2.5rem;
+  /* spacing between cards */
+  margin-top: 2rem;
+  /* spacing above the first row */
 }
 
 /* Individual member card */
@@ -811,7 +844,7 @@ iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
-    filter: grayscale(100%);
+  filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
 
@@ -847,7 +880,7 @@ iframe {
     letter-spacing: 0.04em;
   }
 
-.member-card {
+  .member-card {
     padding: 1.25rem 1rem 1.5rem;
   }
 
@@ -990,6 +1023,7 @@ iframe {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1029,5 +1063,3 @@ iframe {
   color: #991b1b;
   border: 1px solid #fecaca;
 }
-
-
