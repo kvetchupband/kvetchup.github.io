@@ -44,7 +44,7 @@ body {
 }
 
 main {
-  padding-top: 40px;
+  padding-top: 60px;
   /* enough space for the fixed header on desktop */
   flex: 1 0 auto;
 }
@@ -52,7 +52,6 @@ main {
 /* Layout helpers */
 .container {
   width: 100%;
-  max-width: 1100px;
   margin: 0 auto;
   padding-inline: 1rem;
   /* side padding so content doesn't hug edges on phones */
@@ -97,7 +96,8 @@ iframe {
   color: var(--logo-color);
   text-decoration: none;
   display: inline-block;
-  white-space: nowrap;   /* keep “KvetchUP” on one line */
+  white-space: nowrap;
+  /* keep “KvetchUP” on one line */
 }
 
 .logo:link,
@@ -146,31 +146,49 @@ iframe {
 /* HAMBURGER BASE (hidden on desktop by default) */
 .nav-toggle {
   display: none;
-  background: transparent;
-  border: none;
-  padding: 0.4rem;          /* tap area */
+  /* shown only on mobile via media query */
+  position: relative;
+  /* so spans can be absolutely positioned */
+  width: 32px;
+  height: 32px;
+  padding: 0;
   margin-left: auto;
+  /* push it to the right, inside container padding */
   cursor: pointer;
 }
 
 .nav-toggle span {
-  display: block;
-  width: 18px;              /* smaller so X stays inside */
+  position: absolute;
+  left: 50%;
+  width: 20px;
   height: 2px;
   border-radius: 999px;
   background: var(--light-text);
+  transform: translateX(-50%);
+  /* center horizontally in the button */
   transform-origin: center;
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
 }
 
-.nav-toggle span + span {
-  margin-top: 4px;
+/* top, middle, bottom bars */
+.nav-toggle span:nth-child(1) {
+  top: 10px;
 }
+
+.nav-toggle span:nth-child(2) {
+  top: 15px;
+}
+
+.nav-toggle span:nth-child(3) {
+  top: 20px;
+}
+
 
 /* MOBILE NAV: hamburger + dropdown */
 @media (max-width: 720px) {
+
   /* a bit more top padding since mobile header is taller */
   main {
     padding-top: 90px;
@@ -198,12 +216,14 @@ iframe {
 
   .main-nav {
     position: absolute;
-    top: 100%;             /* directly under the header bar */
+    top: 100%;
+    /* directly under the header bar */
     left: 0;
     right: 0;
     background: var(--nav-background);
     border-bottom: 1px solid rgba(148, 163, 184, 0.3);
-    display: none;         /* hidden by default */
+    display: none;
+    /* hidden by default */
     flex-direction: column;
     align-items: flex-start;
     padding: 0.75rem 1.5rem 1rem;
@@ -221,7 +241,9 @@ iframe {
 
   /* Animate icon into an X (tighter, centered) */
   body.nav-open .nav-toggle span:nth-child(1) {
-    transform: rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+    top: 15px;
+    /* move to center */
   }
 
   body.nav-open .nav-toggle span:nth-child(2) {
@@ -229,7 +251,9 @@ iframe {
   }
 
   body.nav-open .nav-toggle span:nth-child(3) {
-    transform: rotate(-45deg);
+    transform: translateX(-50%) rotate(-45deg);
+    top: 15px;
+    /* move to center */
   }
 }
 
