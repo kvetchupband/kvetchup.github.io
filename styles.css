@@ -1071,3 +1071,7 @@ iframe {
   color: #991b1b;
   border: 1px solid #fecaca;
 }
+
+.bookings-section h3 {
+  margin-top: 2rem;   /* space before each heading */
+}

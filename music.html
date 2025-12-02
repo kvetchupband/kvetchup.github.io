@@ -48,7 +48,7 @@
       <div class="container">
         <h2>Selected Songs</h2>
         <p class="media-intro">
-          Live performances and favorite moments from KvetchUP. New videos added regularly.
+          Live performances and favorite moments from KvetchUP.
         </p>
         <div class="media-grid">
           <!-- Example embed (replace src with your own) -->
@@ -64,7 +64,7 @@
               </div>
             </div>
             <p class="media-caption">
-              High-energy klezmer tune from our recent show. Full brass + rhythm section.
+              Festo Festo Denver JCC, November 20th, 2025
             </p>
           </div>
           <div class="media-card">
@@ -78,6 +78,9 @@
                 </iframe>
               </div>
             </div>
+            <p class="media-caption">
+              Gates Concert Hall Newman Center for the Performing Arts, June 4, 2025
+            </p>
           </div>
 
           <div class="media-card">
@@ -91,6 +94,9 @@
                 </iframe>
               </div>
             </div>
+            <p class="media-caption">
+              Festo Festo Denver JCC, November 20th, 2025
+            </p>
           </div>
 
 
@@ -105,6 +111,9 @@
                 </iframe>
               </div>
             </div>
+            <p class="media-caption">
+              Festo Festo Denver JCC, November 20th, 2025
+            </p>
           </div>
 
 
@@ -115,84 +124,84 @@
   </main>
 
   <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-brand">
-          <span class="footer-logo">KvetchUP</span>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">KvetchUP</span>
+      </div>
 
-        <div class="footer-contact">
-          <a href="mailto:kvetchupband@gmail.com">kvetchupband@gmail.com</a>
-          <span class="footer-divider">•</span>
-          <span>Colorado, USA</span>
-        </div>
+      <div class="footer-contact">
+        <a href="mailto:kvetchupband@gmail.com">kvetchupband@gmail.com</a>
+        <span class="footer-divider">•</span>
+        <span>Colorado, USA</span>
+      </div>
 
-        <div class="footer-note">
-          <div class="social-links">
-            <a href="https://instagram.com/kvetchup.band" target="_blank" rel="noreferrer"
-              class="social-link instagram-link">
-              <span class="instagram-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <!-- outer rounded square -->
-                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
-                  <!-- main circle -->
-                  <circle cx="12" cy="12" r="5"></circle>
-                  <!-- small top-right circle -->
-                  <circle cx="17" cy="7" r="1.5"></circle>
-                </svg>
-              </span>
-              <span class="instagram-handle">kvetchup.band</span>
-            </a>
-          </div>
+      <div class="footer-note">
+        <div class="social-links">
+          <a href="https://instagram.com/kvetchup.band" target="_blank" rel="noreferrer"
+            class="social-link instagram-link">
+            <span class="instagram-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <!-- outer rounded square -->
+                <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+                <!-- main circle -->
+                <circle cx="12" cy="12" r="5"></circle>
+                <!-- small top-right circle -->
+                <circle cx="17" cy="7" r="1.5"></circle>
+              </svg>
+            </span>
+            <span class="instagram-handle">kvetchup.band</span>
+          </a>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        /* === MOBILE NAV TOGGLER === */
-        const navToggle = document.querySelector(".nav-toggle");
-        const mainNav = document.querySelector(".main-nav");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      /* === MOBILE NAV TOGGLER === */
+      const navToggle = document.querySelector(".nav-toggle");
+      const mainNav = document.querySelector(".main-nav");
 
-        if (navToggle && mainNav) {
-          navToggle.addEventListener("click", () => {
-            const isOpen = document.body.classList.toggle("nav-open");
-            navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          });
+      if (navToggle && mainNav) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = document.body.classList.toggle("nav-open");
+          navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
 
-          // Close menu when a link is clicked
-          mainNav.addEventListener("click", (event) => {
-            if (event.target.tagName === "A") {
-              document.body.classList.remove("nav-open");
-              navToggle.setAttribute("aria-expanded", "false");
-            }
-          });
-        }
+        // Close menu when a link is clicked
+        mainNav.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            document.body.classList.remove("nav-open");
+            navToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
 
-        /* === SCROLL REVEAL (your existing code) === */
-        const reveals = document.querySelectorAll(".reveal");
-        if (!reveals.length) return;
+      /* === SCROLL REVEAL (your existing code) === */
+      const reveals = document.querySelectorAll(".reveal");
+      if (!reveals.length) return;
 
-        if ("IntersectionObserver" in window) {
-          const observer = new IntersectionObserver(
-            (entries, obs) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add("visible");
-                  obs.unobserve(entry.target); // only animate once
-                }
-              });
-            },
-            { threshold: 0.15 }
-          );
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                obs.unobserve(entry.target); // only animate once
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
 
-          reveals.forEach(el => observer.observe(el));
-        } else {
-          reveals.forEach(el => el.classList.add("visible"));
-        }
-      });
-    </script>
+        reveals.forEach(el => observer.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add("visible"));
+      }
+    });
+  </script>
 
 </body>
 
