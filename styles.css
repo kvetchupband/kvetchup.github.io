@@ -1112,3 +1112,15 @@ iframe {
   max-width: 1200px;          /* tweak this number to taste */
   margin: 0 auto;            /* centers the form in the container */
 }
+
+@media (max-width: 900px) {
+  #contact .section-grid {
+    display: flex;              /* single column */
+    flex-direction: column;     /* stack in DOM order */
+    align-items: center;        /* keep things centered horizontally */
+  }
+
+  #contact .section-grid > * {
+    order: 0;                   /* reset any reordering */
+  }
+}
