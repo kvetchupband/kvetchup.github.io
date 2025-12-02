@@ -1078,14 +1078,14 @@ iframe {
 
 /* CONTACT PAGE – single column, centered form */
 #contact .container {
-  max-width: 1040px;          /* reasonable content width */
+  max-width: 1300x;          /* reasonable content width */
 }
 
 /* override the generic 2-column grid just for contact */
 #contact .section-grid {
   display: flex;             /* stack items vertically instead of grid columns */
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   gap: 1.75rem;              /* space between header/text and form */
   margin-top: 1.25rem;
 }
@@ -1109,4 +1109,6 @@ iframe {
 /* form fills the column nicely */
 #contact .contact-form {
   width: 100%;
+  max-width: 1200px;          /* tweak this number to taste */
+  margin: 0 auto;            /* centers the form in the container */
 }
