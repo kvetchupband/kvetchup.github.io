@@ -177,7 +177,7 @@ iframe {
 
 @media (max-width: 720px) {
   .site-header .container {
-    padding-inline: 1.25rem;
+    padding-inline: 1.75rem;
     /* still roomy but comfy on tiny screens */
   }
 }
@@ -406,13 +406,13 @@ iframe {
 
 /* Media / Music section */
 
-.section-spacer {
+/* .section-spacer {
   height: 40px;
 }
 
 .contact-spacer {
   height: 80px;
-}
+} */
 
 .media-grid {
   margin-top: 2rem;
