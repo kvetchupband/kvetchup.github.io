@@ -427,9 +427,9 @@ iframe {
   height: 40px;
 } */
 
-.contact-spacer {
+/* .contact-spacer {
   height: 80px;
-}
+} */
 
 .media-grid {
   margin-top: 2rem;
@@ -1078,7 +1078,7 @@ iframe {
 
 /* CONTACT PAGE – single column, centered form */
 #contact .container {
-  max-width: 720px;          /* reasonable content width */
+  max-width: 1040px;          /* reasonable content width */
 }
 
 /* override the generic 2-column grid just for contact */
